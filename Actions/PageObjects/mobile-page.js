@@ -6,19 +6,19 @@ var MobilePageUI = require('../../Interface/mobile-page-ui');
 var abstractPage = new AbstractPage();
 var mobilePageUI = new MobilePageUI();
 
-var MobilePage = function() {
-    this.getCostOfMobile = function() {
+var MobilePage = function () {
+    this.getCostOfMobile = function () {
         abstractPage.waitForControlVisible('//h2[a[text()="Sony Xperia"]]/following-sibling::div//span[contains(@id,"product-price")]');
         return abstractPage.getTextElement('//h2[a[text()="Sony Xperia"]]/following-sibling::div//span[contains(@id,"product-price")]');
     };
 
-    this.clickToDetailPage = function() {
+    this.clickToDetailPage = function () {
         abstractPage.waitForControlVisible(mobilePageUI.DYNAMIC_MOBILE_LINK);
         abstractPage.clickToElement(mobilePageUI.DYNAMIC_MOBILE_LINK);
         return new DetailPage();
     }
 
-    this.addToCart = function() {
+    this.addToCart = function () {
         abstractPage.waitForControlVisible(mobilePageUI.ADD_CART_BUTTON);
         abstractPage.clickToElement(mobilePageUI.ADD_CART_BUTTON);
         return new CheckoutPage();
