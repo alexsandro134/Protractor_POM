@@ -7,5 +7,10 @@ var DetailPage = function() {
         abstractPage.waitForControlVisible('//span[contains(@id,"product-price")]');
         return abstractPage.getTextElement('//span[contains(@id,"product-price")]');
     };
+
+    this.getProductName = function() {
+        abstractPage.waitForControlVisible('//div[@class="product-name"]/span');
+        return abstractPage.getTextElement('//div[@class="product-name"]/span');
+    };
 };
 module.exports = DetailPage;

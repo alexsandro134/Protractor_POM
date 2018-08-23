@@ -1,6 +1,7 @@
 var EC = protractor.ExpectedConditions;
 
 var AbstractPage = function() {
+
     this.waitForControlVisible = function(xpath) {
         let mobileVisibility = EC.presenceOf(element(by.xpath(xpath)));
         browser.wait(mobileVisibility, 10000);
@@ -13,6 +14,12 @@ var AbstractPage = function() {
     this.getTextElement = function(xpath) {
         let elementXpath = element(by.xpath(xpath));
         return elementXpath.getText();
+    };
+
+    this.sendKeyToElement = function(xpath, text) {
+        let elementXpath = element(by.xpath(xpath));
+        elementXpath.clear();
+        elementXpath.sendKeys(text);
     };
 };
 
