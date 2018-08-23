@@ -1,6 +1,4 @@
 var HomePage = require('../Actions/PageObjects/home-page');
-var MobilePage = require('../Actions/PageObjects/mobile-page');
-var DetailPage = require('../Actions/PageObjects/detail-page');
 
 var homePage = new HomePage();
 var mobilePage;
