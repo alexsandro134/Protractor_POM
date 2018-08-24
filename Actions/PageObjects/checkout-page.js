@@ -32,6 +32,7 @@ var CheckoutPage = function () {
     this.clickToEmptyCart = function () {
         abstractPage.clickToElement(checkoutPageUI.EMPTY_CART_BTN);
         return new EmptyCartPage();
+
     };
 };
 

@@ -3,7 +3,7 @@ exports.config = {
     specs: ['../POM_PROTRACTOR/Testcases/TC_04_CompareProducts.spec.js'],
     browserName: 'chrome',
 
-    onPrepare: function() {
+    onPrepare: function () {
         browser.ignoreSynchronization = true;
         browser.driver.manage().window().maximize();
     },
