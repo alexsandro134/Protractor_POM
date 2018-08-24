@@ -21,6 +21,26 @@ var AbstractPage = function() {
         elementXpath.clear();
         elementXpath.sendKeys(text);
     };
+
+    this.isControlDisplayed = function(xpath) {
+        let elementXpath = element(by.xpath(xpath));
+        return elementXpath.isDisplayed();
+    };
+
+    this.getSizeElement = function(xpath) {
+        let listElements = element.all(by.xpath(xpath));
+        return listElements.count;
+    }
+
+    this.switchWindowByTitle = function(title) {
+        var handles = browser.getAllWindowHandles();
+        handles.then(function(handle) {
+            browser.switchTo.window(handle);
+            if(expect(browser.getTitle()).toEqual(title)){
+                return;
+            }
+        })
+    };
 };
 
 module.exports = AbstractPage;
