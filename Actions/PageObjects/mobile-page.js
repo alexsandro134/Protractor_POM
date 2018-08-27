@@ -30,7 +30,7 @@ var MobilePage = function () {
     };
 
     this.addIPhoneToCompare = function () {
-        abstractPage.clickToElement(mobilePageUI.IPHONE_COMPARE_BUTTON_COMPARE_BUTTON);
+        abstractPage.clickToElement(mobilePageUI.IPHONE_COMPARE_BUTTON);
     }
 
     this.getTotalNumberCompare = function () {

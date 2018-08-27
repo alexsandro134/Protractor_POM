@@ -22,22 +22,22 @@ var AbstractPage = function () {
         elementXpath.sendKeys(text);
     };
 
-    this.isControlDisplayed = function(xpath) {
+    this.isControlDisplayed = function (xpath) {
         let elementXpath = element(by.xpath(xpath));
         return elementXpath.isDisplayed();
     };
 
-    this.getSizeElement = function(xpath) {
+    this.getSizeElement = function (xpath) {
         let listElements = element.all(by.xpath(xpath));
         return listElements.count;
     }
 
-    this.switchWindowByTitle = function(title) {
-        var handles = browser.getAllWindowHandles();
-        handles.then(function(handle) {
+    this.switchWindowByTitle = async function (title) {
+        var handles = await browser.getAllWindowHandles();
+        Promise.all(handles)(function (handle) {
             browser.switchTo.window(handle);
-            if(expect(browser.getTitle()).toEqual(title)){
-                return;
+            if (browser.getTitle() == title) {
+                break;
             }
         })
     };
