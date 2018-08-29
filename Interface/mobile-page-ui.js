@@ -5,6 +5,7 @@ var MobilePageUI = function () {
     this.SONY_COMPARE_BUTTON = '//h2[a[text()="Sony Xperia"]]/following-sibling::div[@class="actions"]//a[@class="link-compare"]';
     this.IPHONE_COMPARE_BUTTON = '//h2[a[text()="IPhone"]]/following-sibling::div[@class="actions"]//a[@class="link-compare"]';
     this.COMPARE_BUTTON = '//button[@title="Compare"]';
+    this.LIST_COMPARE = '//ol[@id="compare-items"]/li';
 };
 
 module.exports = MobilePageUI;

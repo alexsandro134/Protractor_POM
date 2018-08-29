@@ -28,18 +28,20 @@ var AbstractPage = function () {
     };
 
     this.getSizeElement = function (xpath) {
-        let listElements = element.all(by.xpath(xpath));
-        return listElements.count;
+        return element.all(by.xpath(xpath)).count();
     }
 
-    this.switchWindowByTitle = async function (title) {
-        var handles = await browser.getAllWindowHandles();
-        Promise.all(handles)(function (handle) {
-            browser.switchTo.window(handle);
-            if (browser.getTitle() == title) {
-                break;
-            }
-        })
+    this.switchWindowByTitle = function (title) {
+        browser.getAllWindowHandles().then(function (handles) {
+            handles.forEach(function (handle) {
+                var windowHandle = handle;
+                browser.switchTo().window(windowHandle).then(function () {
+                    if (browser.getTitle() == title) {
+                        return true;
+                    }
+                });
+            });
+        });
     };
 };
 

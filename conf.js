@@ -1,8 +1,8 @@
 exports.config = {
-    // seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['../POM_PROTRACTOR/Testcases/TC_04_CompareProducts.spec.js'],
+    seleniumAddress: 'http://localhost:4444/wd/hub',
+    specs: ['../PROTRACTOR_POM/Testcases/TC_04_CompareProducts.spec.js'],
     browserName: 'chrome',
-    directConnect: true,
+    // directConnect: true,
 
     onPrepare: function () {
         browser.ignoreSynchronization = true;

@@ -34,7 +34,7 @@ var MobilePage = function () {
     }
 
     this.getTotalNumberCompare = function () {
-        return abstractPage.getSizeElement();
+        return abstractPage.getSizeElement(mobilePageUI.LIST_COMPARE);
     }
 
     this.clickToCompare = function () {
